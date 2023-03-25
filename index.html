@@ -12,7 +12,7 @@
         <div class="header container">
             <div class="nav-bar">
                 <div class="brand">
-                    <a href=""><h1></h1></a>
+                    <a href=""><h1>MB CONSTRUÇAO</h1></a>
                 </div>
                 <div class="nav-list">
                     <ul>
@@ -42,10 +42,10 @@
                     <div class="card-body">
                         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                         <h3>consectetur adipisicing elit</h3>
-                        <div class="descricao">   
+                        <div class="descricao" id="desc-1">   
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error perspiciatis iste placeat fuga reprehenderit enim sunt reiciendis culpa iusto, aliquam amet? Minus voluptatem voluptatum nulla explicabo facere, sed deserunt?</p>
                         </div>
-                        <button>mostrar descricao</button>
+                        <button id="botao-detalhes">mostrar descricao</button>
                     </div>
             </div>
             <div class="card">
@@ -53,10 +53,10 @@
                     <div class="card-body">
                         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                         <h3>consectetur adipisicing elit</h3>
-                        <div class="descricao">   
+                        <div class="descricao" id="desc-2">   
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error perspiciatis iste placeat fuga reprehenderit enim sunt reiciendis culpa iusto, aliquam amet? Minus voluptatem voluptatum nulla explicabo facere, sed deserunt?</p>
                         </div>
-                        <button>mostrar descricao</button>
+                        <button id="botao-detalhes2">mostrar descricao</button>
                     </div>
             </div>
             <div class="card">
@@ -64,10 +64,10 @@
                     <div class="card-body">
                         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                         <h3>consectetur adipisicing elit</h3>
-                        <div class="descricao">   
+                        <div class="descricao" id="desc-3">   
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error perspiciatis iste placeat fuga reprehenderit enim sunt reiciendis culpa iusto, aliquam amet? Minus voluptatem voluptatum nulla explicabo facere, sed deserunt?</p>
                         </div>
-                        <button>mostrar descricao</button>
+                        <button id="botao-detalhes3" class="button">mostrar descricao</button>
                     </div>
             </div>
         </div>
@@ -75,4 +75,20 @@
     <!--Fim Serviços-->
     
 </body>
+<script>
+  var botoes = document.querySelectorAll('button');
+  
+  for (var i = 0; i < botoes.length; i++) {
+    botoes[i].addEventListener('click', function() {
+      var descricao = this.parentNode.querySelector('.descricao');
+      if (descricao.style.display === "none") {
+        descricao.style.display = "block";
+        this.textContent = "ocultar descricao";
+      } else {
+        descricao.style.display = "none";
+        this.textContent = "mostrar descricao";
+      }
+    });
+  }
+</script>
 </html>
