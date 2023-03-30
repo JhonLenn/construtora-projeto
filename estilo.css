@@ -24,10 +24,6 @@ html{
     scroll-behavior: smooth;
     padding: 0;
 }
-
-a{
-    text-decoration: none;
-}
 .container{
     min-height: 100vh;
     width: 100%;
@@ -37,77 +33,56 @@ a{
 }
 
 /* Cabeçalho*/
-#header{
+
+header{
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
     width: 100vw;
-    height: auto;
-    background-color:black;
+    z-index: 1000;
 }
 
-#header .header{
-    min-height: 8vh;
-
-}
-
-#header .nav-bar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    max-width: 1300px;
-    padding: 0px 30px 0px 30px;
-}
-
-#header .nav-list ul{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-
-
-#header .nav-list ul li a{
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: .2rem;
+a{
+    text-decoration: none;
     color: white;
-    padding: 20px;
-    
-
+    font-size: 2.4rem;
 }
 
-#header .nav-list ul li a:hover{
-    font-size: 2rem;
-    background-color: white;
-    padding: 8px;
-    border-radius: 5px;
-    color:black;
-    transition: background-color 1s ease;
-    font-weight: bolder;
-
-}
-
-.brand h1{
-    font-size: 2rem;
+.logo{
+    font-size: 24px;
     text-transform: uppercase;
-    color: white;
+    letter-spacing: 4px;
+
 }
 
-.brand h1:hover{
-    font-size: 2rem;
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    background-color: #000000;
+
+}
+
+.nav-list{
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-list li{
+    margin-left: 15rem;
+}
+
+.mobile-menu{
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-menu div{
+    width: 32px;
     background-color: white;
-    padding: 12px;
-    border-radius: 5px;
-    color:black;
-    font-weight: bolder;
-    transition: background-color 1s ease;
+    height: 2px;
+    margin: 8px;
+
 }
-
-
 /* Fim  Cabeçalho*/
 
 /*Seçao hero*/
@@ -234,7 +209,37 @@ a{
 }
 
 
-@media (width <= 769px){
+@media (max-width:999px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-list{
+        position: absolute;
+        top: 5vh;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #000000;
+        flex-direction: column;
+        justify-content: space-around;
+        transform: translateX(100%);
+        align-items: center;
+        z-index: 1000;
+        transition: .3s ease-in-out;
+    }
+    .nav-list li{
+        margin-left: 0;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+
+    .active{
+        transform: translateX(0);
+    }
+
+
     .card{
       flex-direction: column;
       text-align: center; 
@@ -267,7 +272,7 @@ a{
     .card button{
         display: block;
     }
-  }
+}
 
  
 /* fim Keyframes*/
