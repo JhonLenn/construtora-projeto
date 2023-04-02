@@ -23,6 +23,7 @@ html{
     font-family: 'Montserrat','sans-serif';
     scroll-behavior: smooth;
     padding: 0;
+    scroll-behavior: smooth;
 }
 .container{
     min-height: 100vh;
@@ -69,8 +70,22 @@ nav{
 }
 
 .nav-list li{
-    margin-left: 15rem;
+    margin-left: 3vw;
+    position: relative;
 }
+
+.nav-list li a:hover span{
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    animation: slide 0.5s forwards;
+    animation-delay: 0.5s;
+}
+
+
 
 .mobile-menu{
     cursor: pointer;
@@ -119,31 +134,25 @@ nav{
 }
 
 
-#hero h1{
-    text-transform: uppercase;
-    display: block;
-    width: fit-content;
-    font-size: 7rem;
-    position: relative;
-    color: transparent;
-    animation: text_reveal 5s ease forwards;
-}
+
 
 
 /* Fim Seçao hero*/
 
 /*seçao serviços*/
 #servicos .servicos{
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-    max-width: 1500px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 3000px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 50px 0;
+    gap: 50px;
 }
 
-#servicos .servicos .titulo-secao{
+#servicos .titulo-secao{
     font-size: 6rem;
+    text-align: center;
+    margin-top: 150px;
 }
 
 
@@ -151,8 +160,8 @@ nav{
 .card{
     display: flex;
     align-items: center;
-    width: 85vw;
-    max-width: 850px;
+    width: 40vw;
+    max-width: 1000px;
     padding: 50px 30px 50px 20px;
     border-radius: 40px;
     background-color: #b9bdbd;
@@ -202,13 +211,17 @@ nav{
 /*Fim seçao serviços*/
 
 /*Keyframes*/
-@keyframes text_reveal{
+
+@keyframes slide{
+    50%{
+        width: 100%;
+        left: 0;
+    }
     100%{
-        color: white;
-        
+        width: 0;
+        left: 100%;
     }
 }
-
 
 @media (max-width:999px){
     body{
@@ -240,7 +253,9 @@ nav{
         transform: translateX(0);
     }
 
-
+    #servicos .servicos{
+        flex-direction: column;
+    }
     .card{
       flex-direction: column;
       text-align: center; 
