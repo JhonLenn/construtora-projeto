@@ -3,11 +3,11 @@ var botoes = document.querySelectorAll('button');
 for (var i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener('click', function() {
     var descricao = this.parentNode.querySelector('.descricao');
-    if (descricao.style.display === "none") {
-      descricao.style.display = "block";
+    if (descricao.style.display === "block") {
+      descricao.style.display = "none";
       this.textContent = "ocultar descricao";
     } else {
-      descricao.style.display = "none";
+      descricao.style.display = "block";
       this.textContent = "mostrar descricao";
     }
   });
