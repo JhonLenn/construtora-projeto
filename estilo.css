@@ -270,37 +270,7 @@ nav{
 
 
 /*seçao contato*/
-#contato .contato{
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    padding: 50px 50px;
-    max-width: 3000px;
-    gap: 30px;
-}
 
-#contato .card-contato{
-    display: flex;
-    width: 100vw;
-    background-color: #b9bdbd;
-    border-radius: 20px;
-    height: 300px;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-#contato .card-corpo-contato{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90vw;
-}
-
-#contato .card-contato img{
-    width: 150px;
-}
 /*seçao contato*/
 /*Keyframes*/
 
